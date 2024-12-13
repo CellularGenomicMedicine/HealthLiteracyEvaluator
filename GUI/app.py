@@ -15,56 +15,6 @@ from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 load_dotenv()
 
-template = """ 
-You are an expert assistant skilled in simplifying complex medical and genetic information for diverse audiences. Your task is to:
-1. Rewrite the TEXT for individuals with low literacy. Use clear, everyday language and avoid technical jargon, the **original text** after simplification is **simplified text**.
-2. Calculate the evaluation scores for both the **original text** and the **simplified text** using the following formulas:  
-
-   **Flesch Reading-Ease (FRE)**:  
-   FRE = 206.835 - 1.015 × (number of words) / (number of sentences) - 84.6 × (number of syllables) / (number of words)
-   
-   **Gunning Fog Index (GFI)**: 
-   GFI = 0.4 x (number of words) / (number of sentences) + 100 x (number of complex words) / (number of words)
-
-   **Flesch-Kincaid Grade Level (FKGL)**: 
-   FKGL = 0.39 x (number of words) / (number of sentences) + 11.8 x (number of syllables) / (number of words) - 15.59
-
-   **Coleman-Liau Index (CLI)**
-   CLI = 5.89 x (number of characters) / (number of words) - 0.3 x (number of sentences) / (number of words) - 15.8
-
-   **Automatic Readability Index (ARI)**
-   ARI = 4.71 x (number of characters) / (number of words) + 0.5 x (number of words) / (number of sentences) - 21.43
-   
-   **Simple Measure of Gobbledygook (SMOG)**:  
-   SMOG = 1.043 × sqrt((number of words more than 3 syllables) × 30 / (number of sentences)) + 3.1291  
-
-   **Linsear Write Formula (LWF)**:  
-   LWF = (100-100x(number of words less than 3 syllables)/(number of words) + 3x100x(number of words more than 3 syllables)/(number of words)) / (100*(number of sentences)/(number of words))
-
-Formatting Requirements:
-1. Provide the **simplified text**, formatted as `### Simplified Text`.
-2. Output the scores as CSV. Use this format:
-```
-Metric,Original Score,Simplified Score
-FRE,value1,value2
-GFI,value1,value2
-FKGL,value1,value2
-CLI,value1,value2
-ARI,value1,value2
-SMOG,value1,value2
-LWF,value1,value2
-
-```
-   
-Here is the TEXT:
-{text}
-
-Your response should include:
-1. The **simplified text**, formatted as `### Simplified Text`.
-2. The scores formatted as CSV.
-
-"""
-
 def map_readability_scores(df):
     def get_grade_level(metric, score):
         if metric == 'GFI':
@@ -207,6 +157,55 @@ grade_order = ["Elementary School",
                "Professor"
               ]
 
+template = """ 
+You are an expert assistant skilled in simplifying complex medical and genetic information for diverse audiences. Your task is to:
+1. Rewrite the TEXT for individuals with low literacy. Use clear, everyday language and avoid technical jargon, the **original text** after simplification is **simplified text**.
+2. Calculate the evaluation scores for both the **original text** and the **simplified text** using the following formulas:  
+
+   **Flesch Reading-Ease (FRE)**:  
+   FRE = 206.835 - 1.015 × (number of words) / (number of sentences) - 84.6 × (number of syllables) / (number of words)
+   
+   **Gunning Fog Index (GFI)**: 
+   GFI = 0.4 x (number of words) / (number of sentences) + 100 x (number of complex words) / (number of words)
+
+   **Flesch-Kincaid Grade Level (FKGL)**: 
+   FKGL = 0.39 x (number of words) / (number of sentences) + 11.8 x (number of syllables) / (number of words) - 15.59
+
+   **Coleman-Liau Index (CLI)**
+   CLI = 5.89 x (number of characters) / (number of words) - 0.3 x (number of sentences) / (number of words) - 15.8
+
+   **Automatic Readability Index (ARI)**
+   ARI = 4.71 x (number of characters) / (number of words) + 0.5 x (number of words) / (number of sentences) - 21.43
+   
+   **Simple Measure of Gobbledygook (SMOG)**:  
+   SMOG = 1.043 × sqrt((number of words more than 3 syllables) × 30 / (number of sentences)) + 3.1291  
+
+   **Linsear Write Formula (LWF)**:  
+   LWF = (100-100x(number of words less than 3 syllables)/(number of words) + 3x100x(number of words more than 3 syllables)/(number of words)) / (100*(number of sentences)/(number of words))
+
+Formatting Requirements:
+1. Provide the **simplified text**, formatted as `### Simplified Text`.
+2. Output the scores as CSV. Use this format:
+```
+Metric,Original Score,Simplified Score
+FRE,value1,value2
+GFI,value1,value2
+FKGL,value1,value2
+CLI,value1,value2
+ARI,value1,value2
+SMOG,value1,value2
+LWF,value1,value2
+
+```
+   
+Here is the TEXT:
+{text}
+
+Your response should include:
+1. The **simplified text**, formatted as `### Simplified Text`.
+2. The scores formatted as CSV.
+
+"""
 
 prompt = PromptTemplate(input_variables=["text"], template=template)
 llm = ChatOpenAI(temperature=0, model="gpt-4-turbo")

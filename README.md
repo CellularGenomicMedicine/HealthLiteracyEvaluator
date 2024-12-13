@@ -5,7 +5,7 @@ This repository contains the implementation for the paper "*AI-powered simplific
 Repository Overview:
 1. **src**: scripts and notebook for data analysis, including statistics and plotting.
 2. **GUI**: scripts for user interface.
-3. **data**: source data for evaluated texts and scores. 
+3. **data**: source data for the evaluated texts and scores. 
 
 ## User interface
 We have provided two approaches for the interface.

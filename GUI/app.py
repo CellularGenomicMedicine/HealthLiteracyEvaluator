@@ -28,7 +28,7 @@ def map_readability_scores(df):
                 return '9-12'
             elif 13 <= score <= 15:
                 return '13-15'
-            elif 15 < score:
+            elif score > 15:
                 return '16-18'
             
         elif metric == 'FKGL':

@@ -16,6 +16,6 @@ streamlit run app.py
 ```
 
 
-2. **Online access**: a demo from [Huggingface](https://huggingface.co/)
+2. **Online access**: a demo from [Huggingface](https://huggingface.co/).
 
 ![Screenshot](https://github.com/user-attachments/assets/a56e1695-9f4f-41b3-bc4c-aae6903764f7)

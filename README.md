@@ -10,7 +10,8 @@ Repository Overview:
 ## User interface
 We have provided two approaches for the interface.
 
-1. **Local app**: install the packages from `requirements.txt`, run the following command in your terminal. For more instructions, see [doc](https://github.com/CellularGenomicMedicine/LLM_simplifytext/tree/main/GUI).
+1. **Local app**:
+install the packages `pip install -r requirements.txt`, run the following command in terminal. For more instructions, see [doc](https://github.com/CellularGenomicMedicine/LLM_simplifytext/tree/main/GUI).
 ```
 streamlit run app.py
 ```

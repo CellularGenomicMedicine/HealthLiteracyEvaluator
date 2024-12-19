@@ -20,3 +20,4 @@ streamlit run app.py
 2. **Online access**: a demo implemented via [Huggingface](https://huggingface.co/spaces/pcao/Gensimbot).
 
 ![Screenshot](https://github.com/user-attachments/assets/a56e1695-9f4f-41b3-bc4c-aae6903764f7)
+![Screenshot](https://github.com/user-attachments/assets/74646880-f6a9-41d7-843a-46dade0b3d44)

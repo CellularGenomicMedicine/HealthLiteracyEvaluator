@@ -1,7 +1,7 @@
 # Author: Ping Cao 
 # https://github.com/creatorcao
 """
-Use LLM to simplify medical text and evaluate the readability scors. 
+Use LLM to simplify medical genetic text and evaluate the readability scores. 
 """
 import os, re
 import pandas as pd

@@ -17,6 +17,6 @@ streamlit run app.py
 ```
 
 
-2. **Online access**: a demo implemented via [Huggingface](https://huggingface.co/spaces/pcao/Gensimbot).
+2. **Online access**: a demo implemented via HuggingFace [HealthLiteracyEvaluator](https://huggingface.co/spaces/pcao/HealthLiteracyEvaluator).
 
 ![Screenshot](https://github.com/user-attachments/assets/74646880-f6a9-41d7-843a-46dade0b3d44)

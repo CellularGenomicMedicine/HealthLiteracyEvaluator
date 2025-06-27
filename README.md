@@ -2,7 +2,7 @@
 **[24-06-2025]Update**: We are happy to announce that Human Reproduction has accepted our paper! 🎉
 ![ ](https://github.com/user-attachments/assets/d0266e78-74b0-4e21-8376-745d10e13a06)
 
-This repository contains the implementation for the paper "*AI-powered simplification of reproductive genetic care to enhance accessibility and address patient vulnerability*".
+This repository contains the implementation for the paper "*Artificial intelligence-simplified information to advance reproductive genetic literacy and health equity*".
 
 Repository Overview:
 1. **src**: scripts and notebook for data analysis, including statistics and plotting.

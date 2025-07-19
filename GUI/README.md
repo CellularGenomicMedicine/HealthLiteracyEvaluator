@@ -12,6 +12,6 @@ streamlit run app.py
 
 
 #### 2. Gradio app:
-- [HuggingFace link](https://huggingface.co/)
+- [🤗 HuggingFace link](https://huggingface.co/spaces/CellularGenomicMedicine/HealthLiteracyEvaluator)
 
 
